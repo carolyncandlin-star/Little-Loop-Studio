@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Handmade crochet flowers, keychains and thoughtful gifts from Little Loop Studio.">
+    <title>Little Loop Studio | Handmade Crochet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-flower">❀</span>
+            <span>
+                Little Loop Studio
+                <small>HANDMADE CROCHET</small>
+            </span>
+        </a>
+
+        <!-- Hamburger menu button (shown on mobile only) -->
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#services" class="nav-button">Shop Now ↗</a>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="handwritten">Handmade with love ♡</p>
+                <h1>Crochet Flowers,<br>Keychains &amp; Custom Gifts</h1>
+                <p class="hero-description">
+                    Soft yarn. Big dreams. Handmade just for you.
+                </p>
+                <a href="#services" class="button">Explore Collection →</a>
+
+                <div class="hero-features">
+                    <span>♡ 100% Handmade</span>
+                    <span>✿ Custom Orders</span>
+                    <span>♧ Made with Care</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured carousel (Week 2) -->
+        <section class="carousel" aria-label="Featured creations">
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+
+                    <figure class="slide" style="--bg: url('images/crocheting.jpg.jpeg')">
+                        <img src="images/crocheting.jpg.jpeg" alt="A girl's hands crocheting with orange and white yarn">
+                        <figcaption>
+                            <h3>Made by Hand, Just for You</h3>
+                            <p>Every piece is crocheted one stitch at a time.</p>
+                            <a href="#services" class="button">Browse the Collection</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="slide" style="--bg: url('images/rabbit .jpeg')">
+                        <img src="images/rabbit .jpeg" alt="A crochet rabbit holding a small heart">
+                        <figcaption>
+                            <h3>Have an Idea? We'll Crochet It</h3>
+                            <p>Custom colours, names and gift sets.</p>
+                            <a href="#contact" class="button" data-product="Custom Gifts">Request a Custom Order</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="slide" style="--bg: url('images/heart.jpeg')">
+                        <img src="images/heart.jpeg" alt="Soft crochet hearts in pink, cream and lilac">
+                        <figcaption>
+                            <h3>The Perfect Little Gift</h3>
+                            <p>Soft crochet hearts that make someone's day.</p>
+                            <a href="#contact" class="button" data-product="Something else">Send an Enquiry</a>
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+                <button class="carousel-btn prev" id="carouselPrev" type="button" aria-label="Previous slide">‹</button>
+                <button class="carousel-btn next" id="carouselNext" type="button" aria-label="Next slide">›</button>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+        </section>
+
+        <!-- About -->
+        <section class="about section" id="about">
+            <div class="about-image">
+                <img
+                    src="images/studio.jpg"
+                    alt="Crochet handmade logo with a yarn ball, crochet hook and flower">
+            </div>
+
+            <div class="about-content">
+                <p class="eyebrow">A LITTLE ABOUT US</p>
+                <h2>A Little Studio with<br>Big Dreams</h2>
+                <p>
+                    Welcome to Little Loop Studio, a little corner filled
+                    with creativity, colour and handmade joy.
+                </p>
+                <p>
+                    Every creation is made with care, one stitch at a time.
+                    We believe the smallest handmade gifts can hold the
+                    biggest feelings.
+                </p>
+                <p class="handwritten">Because every stitch tells a story ♡</p>
+            </div>
+
+            <div class="values">
+                <div class="value">
+                    <span>♡</span>
+                    <p><strong>Made with love</strong><br>Care in every detail.</p>
+                </div>
+                <div class="value">
+                    <span>✿</span>
+                    <p><strong>Thoughtful designs</strong><br>Little things, lasting joy.</p>
+                </div>
+                <div class="value">
+                    <span>🎁</span>
+                    <p><strong>Custom creations</strong><br>Made special for you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services section" id="services">
+            <div class="section-heading">
+                <p class="eyebrow">OUR COLLECTION</p>
+                <h2>What We Create</h2>
+                <p>Handmade pieces to bring a little more joy to your everyday.</p>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <img
+                        src="images/flowers.jpg"
+                        alt="Flower bouquet inspiration"
+                        loading="lazy">
+                    <div class="product-info">
+                        <h3>Crochet Flowers</h3>
+                        <p>Forever fresh, always special.</p>
+                        <a href="#contact" class="text-link"
+                           data-product="Crochet Flowers">Explore Flowers →</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img
+                        src="images/keychains.jpg"
+                        alt="Handmade crochet character keychains"
+                        loading="lazy">
+                    <div class="product-info">
+                        <h3>Little Keychains</h3>
+                        <p>Small details, big smiles.</p>
+                        <a href="#contact" class="text-link"
+                           data-product="Little Keychains">Explore Keychains →</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img
+                        src="images/custom.jpg"
+                        alt="Handmade crochet accessories and custom gifts"
+                        loading="lazy">
+                    <div class="product-info">
+                        <h3>Custom Gifts</h3>
+                        <p>A personal touch for someone special.</p>
+                        <a href="#contact" class="text-link"
+                           data-product="Custom Gifts">Create a custom gift →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact section" id="contact">
+            <div class="contact-intro">
+                <p class="eyebrow">LET'S MAKE SOMETHING SPECIAL</p>
+                <h2>Get in Touch</h2>
+                <p>
+                    Have a question, want a custom order, or just want to
+                    say hi? We'd love to hear from you!
+                </p>
+                <p class="contact-note handwritten">
+                    Let's create something beautiful ♡
+                </p>
+            </div>
+
+            <form id="contactForm" class="contact-form" novalidate>
+                <label for="name">Your Name</label>
+                <input id="name" name="name" type="text"
+                       placeholder="Enter your name" required minlength="2"
+                       aria-describedby="nameError">
+                <span class="field-error" id="nameError"></span>
+
+                <label for="email">Your Email</label>
+                <input id="email" name="email" type="email"
+                       placeholder="Enter your email" required
+                       aria-describedby="emailError">
+                <span class="field-error" id="emailError"></span>
+
+                <label for="product">What are you interested in?</label>
+                <select id="product" name="product" required
+                        aria-describedby="productError">
+                    <option value="">Choose a creation</option>
+                    <option>Crochet Flowers</option>
+                    <option>Little Keychains</option>
+                    <option>Custom Gifts</option>
+                    <option>Something else</option>
+                </select>
+                <span class="field-error" id="productError"></span>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="3"
+                          placeholder="Tell us your idea..." required
+                          aria-describedby="messageError"></textarea>
+                <span class="field-error" id="messageError"></span>
+
+                <button type="submit" class="button">Send Enquiry →</button>
+                <p id="formMessage" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#home" class="footer-logo">Little Loop Studio ♡</a>
+        <p>Small stitches, big dreams.</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p class="copyright">© 2026 Little Loop Studio. Made with love.</p>
+    </footer>
+
+</body>
+</html>

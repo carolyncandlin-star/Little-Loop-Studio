@@ -1,0 +1,1013 @@
+/* LITTLE LOOP STUDIO — Elegant boutique styling (Week 2, final) */
+
+:root {
+    --cream: #fbf7ef;
+    --ivory: #f5f0e5;
+    --sage: #78866b;
+    --sage-dark: #455640;
+    --sage-light: #e5e8d8;
+    --pink: #f5e4df;
+    --pink-dark: #d9a9a5;
+    --brown: #8b715a;
+    --ink: #30372e;
+    --muted: #5f6157;
+    --white: #fffdf9;
+    --border: #e7dfd2;
+    --error: #b3453f;
+    --success: #2f6e3d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* ===== Navigation ===== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 78px;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    background: rgba(251, 247, 239, 0.97);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 21px;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.logo-flower {
+    font-size: 37px;
+    color: var(--sage-dark);
+}
+
+.logo small {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.nav-links a {
+    transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.footer-links a:hover {
+    color: var(--sage);
+}
+
+/* Hamburger button: hidden on desktop, shown in the mobile section below */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 6px 10px;
+    line-height: 1;
+    font-size: 28px;
+    color: var(--ink);
+    cursor: pointer;
+}
+
+/* ===== Buttons ===== */
+
+.nav-button,
+.button {
+    display: inline-block;
+    background: #5f6f52;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 11px 23px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.nav-button:hover,
+.button:hover {
+    background: var(--sage-dark);
+    transform: translateY(-2px);
+}
+
+.nav-button:active,
+.button:active {
+    transform: scale(0.97);
+}
+
+/* Visible keyboard focus */
+.button:focus-visible,
+.nav-button:focus-visible,
+.menu-toggle:focus-visible,
+.carousel-btn:focus-visible,
+.carousel-dot:focus-visible,
+.back-to-top:focus-visible {
+    outline: 2px solid var(--sage-dark);
+    outline-offset: 3px;
+}
+
+/* ===== Hero ===== */
+
+.hero {
+    position: relative;
+    min-height: 560px;
+    padding: 60px 8%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: url("images/hero.jpg") center 65% / cover no-repeat;
+}
+
+/* Light overlay so the text is easy to read.
+   Strong on the left, fades out on the right. */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        rgba(255, 250, 243, 0.85) 0%,
+        rgba(255, 250, 243, 0.55) 35%,
+        rgba(255, 250, 243, 0) 70%
+    );
+    z-index: 1;
+}
+
+/* "relative" lets the text sit ABOVE the overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    width: 50%;
+    text-align: center;
+}
+
+.handwritten {
+    font-style: italic;
+    color: var(--brown);
+}
+
+.hero-content > .handwritten {
+    margin-bottom: 14px;
+    font-size: 19px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.15;
+    font-weight: normal;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+    color: var(--ink);
+}
+
+.hero-description {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 34px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.hero-features span {
+    padding: 0 15px;
+    border: none;
+}
+
+.hero-features span:first-child,
+.hero-features span:nth-child(2) {
+    border-right: 2px solid #fff;
+}
+
+/* ===== Shared section styles ===== */
+
+.section {
+    padding: 75px 8%;
+}
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--sage-dark);
+    margin-bottom: 12px;
+}
+
+.section h2,
+.contact h2 {
+    font-size: clamp(29px, 3vw, 39px);
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.section p {
+    color: var(--muted);
+}
+
+/* ===== Featured carousel ===== */
+
+.carousel {
+    padding: 60px 8%;
+    background: var(--cream);
+}
+
+.carousel-viewport {
+    position: relative;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--ivory);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 440px;
+    margin: 0;
+    overflow: hidden;
+    background: var(--ivory);
+}
+
+/* A blurred copy of the photo fills the empty sides */
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: var(--bg) center / cover no-repeat;
+    filter: blur(18px);
+}
+
+/* Soft dark layer (under the photo) so white text is readable */
+.slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 38, 28, 0.45);
+}
+
+/* The WHOLE photo, sharp: nothing is cropped or zoomed */
+.slide img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Text on the picture (default: along the bottom) */
+.slide figcaption {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 70px 8% 24px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(to top, rgba(30, 38, 28, 0.85), rgba(30, 38, 28, 0));
+}
+
+.slide figcaption h3 {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.25;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.slide figcaption p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #f3f1ea;
+    margin-bottom: 14px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 253, 249, 0.9);
+    color: var(--sage-dark);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-btn:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-btn.prev { left: 14px; }
+.carousel-btn.next { right: 14px; }
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.carousel-dot {
+    width: 11px;
+    height: 11px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-dot.active {
+    background: var(--sage);
+    transform: scale(1.25);
+}
+
+/* Big screens: text sits on the left, over the blurred part */
+@media (min-width: 1100px) {
+    .slide figcaption {
+        top: 0;
+        left: 9%;
+        right: auto;
+        bottom: 0;
+        width: 24%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        background: none;
+    }
+
+    .slide figcaption h3 {
+        font-size: 28px;
+    }
+}
+
+/* ===== About Us ===== */
+
+.about {
+    display: grid;
+    grid-template-columns: 0.85fr 1.2fr 1fr;
+    align-items: center;
+    gap: 45px;
+    background: var(--ivory);
+}
+
+.about-image img {
+    height: 290px;
+    border: 8px solid var(--white);
+    border-radius: 5px;
+    transform: rotate(-3deg);
+    box-shadow: 0 8px 25px rgba(75, 65, 45, 0.08);
+}
+
+.about-content > p:not(.eyebrow) {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+
+.about-content .handwritten {
+    font-family: Georgia, serif;
+    font-size: 17px !important;
+    margin-top: 20px;
+}
+
+.values {
+    border-left: 1px solid #dcd6c7;
+    padding-left: 30px;
+}
+
+.value {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 16px 0;
+}
+
+.value > span {
+    min-width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    font-size: 20px;
+}
+
+.value p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.value strong {
+    color: var(--ink);
+    font-weight: normal;
+}
+
+/* ===== Services / Product collection ===== */
+
+.services {
+    background: var(--cream);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading > p:last-child {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(65, 60, 45, 0.08);
+}
+
+.product-card img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+.product-info p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin-bottom: 13px;
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--sage-dark);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin-top: auto;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== Contact ===== */
+
+.contact {
+    background: var(--pink);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.contact-intro > p:not(.eyebrow) {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    max-width: 430px;
+}
+
+.contact-intro .contact-note {
+    margin-top: 25px;
+    font-family: Georgia, serif !important;
+    font-size: 19px !important;
+}
+
+.contact-form {
+    background: rgba(255, 253, 249, 0.85);
+    border: 1px solid #e8d5cb;
+    border-radius: 15px;
+    padding: 28px;
+}
+
+.contact-form label {
+    display: block;
+    margin: 12px 0 5px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--ink);
+    padding: 11px 12px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--sage);
+    outline-offset: 2px;
+}
+
+/* Form validation */
+.field-error {
+    display: block;
+    min-height: 18px;
+    margin-top: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: var(--error);
+}
+
+.contact-form input.invalid,
+.contact-form select.invalid,
+.contact-form textarea.invalid {
+    border-color: var(--error);
+    background: #fff6f5;
+}
+
+.contact-form .button {
+    margin-top: 18px;
+}
+
+.contact-form .button:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+}
+
+#formMessage {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+#formMessage.success,
+#formMessage.error {
+    padding: 11px 14px;
+    border-radius: 8px;
+}
+
+#formMessage.success {
+    background: #e8f3ea;
+    border: 1px solid #b9d9c0;
+    color: var(--success);
+}
+
+#formMessage.error {
+    background: #fbeceb;
+    border: 1px solid #efc3bf;
+    color: var(--error);
+}
+
+/* ===== Footer ===== */
+
+.footer {
+    background: var(--sage-dark);
+    color: var(--cream);
+    text-align: center;
+    padding: 35px 7% 20px;
+}
+
+.footer-logo {
+    font-size: 23px;
+}
+
+.footer > p {
+    color: #e1e4d7;
+    font-style: italic;
+    font-size: 14px;
+    margin: 6px 0 18px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 18px;
+    margin-top: 22px;
+    font-style: normal;
+    font-size: 12px;
+}
+
+/* ===== Back-to-top button ===== */
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: var(--sage);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s, background 0.2s;
+    z-index: 900;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--sage-dark);
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN
+   =================================================== */
+
+/* ----- Tablet (950px and below) ----- */
+@media (max-width: 950px) {
+    .navbar {
+        padding: 15px 4%;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .hero,
+    .section {
+        padding: 55px 5%;
+    }
+
+    .hero-content {
+        width: 60%;
+    }
+
+    .carousel {
+        padding: 50px 5%;
+    }
+
+    .about {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 30px;
+    }
+
+    .values {
+        grid-column: 1 / -1;
+        border-left: none;
+        border-top: 1px solid #dcd6c7;
+        padding: 15px 0 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .product-card img {
+        height: 175px;
+    }
+
+    .contact {
+        gap: 30px;
+    }
+}
+
+/* ----- Mobile navigation + hero (768px and below) ----- */
+@media (max-width: 768px) {
+    /* Logo and ☰ button stay on one row */
+    .navbar {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-button {
+        display: none;      /* the Services link already covers it */
+    }
+
+    /* Menu is hidden until the ☰ button adds the "open" class */
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 5%;
+        width: 90%;
+        margin-top: 8px;
+        padding: 8px 16px;
+        background: #fffaf3;
+        border: 1px solid #e8dfd1;
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        z-index: 2000;
+    }
+
+    .nav-links.open a {
+        display: block;
+        padding: 14px 8px;
+        text-align: center;
+        color: var(--sage-dark);
+        font-size: 16px;
+        font-weight: 700;
+        border-bottom: 1px solid #e0d6c6;
+    }
+
+    .nav-links.open a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links.open a::before {
+        content: "›";
+        display: inline-block;
+        margin-right: 10px;
+        color: #8a9a78;
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    .nav-links.open a:hover {
+        background: #f0eee5;
+        border-radius: 8px;
+    }
+
+    /* Hero: centred text over a soft white layer */
+    .hero {
+        min-height: 480px;
+        padding: 45px 6%;
+        justify-content: center;
+        text-align: center;
+        background-position: 75% center;
+    }
+
+    .hero::before {
+        background: rgba(255, 250, 243, 0.78);
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ----- Phones (600px and below) ----- */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-features {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero-features span {
+        padding: 0 10px;
+    }
+
+    .hero-features span:nth-child(2) {
+        border-right: none;     /* no line after "Custom Orders" on mobile */
+    }
+
+    .section {
+        padding: 60px 6%;
+    }
+
+    .carousel {
+        padding: 40px 5%;
+    }
+
+    .slide {
+        height: 340px;
+    }
+
+    .slide figcaption {
+        padding: 50px 6% 16px;
+    }
+
+    .slide figcaption h3 {
+        font-size: 18px;
+    }
+
+    .slide figcaption p {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .slide figcaption .button {
+        padding: 8px 18px;
+        font-size: 12px;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-image {
+        max-width: 330px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .about-image img {
+        height: 250px;
+    }
+
+    .values {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: auto;
+    }
+
+    .product-card img {
+        height: 230px;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+/* ----- Very small phones (380px and below) ----- */
+@media (max-width: 380px) {
+    .logo {
+        font-size: 17px;
+    }
+
+    .logo-flower {
+        font-size: 30px;
+    }
+
+    .hero-features span {
+        border-right: none !important;
+    }
+
+    .slide {
+        height: 310px;
+    }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .carousel-track,
+    .back-to-top,
+    .product-card {
+        transition: none;
+    }
+}
